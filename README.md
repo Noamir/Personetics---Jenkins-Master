@@ -1,11 +1,12 @@
 Personetics-Jenkins-Master
+
 This repository spins up Jenkins Master on a container with the required plugins to deploy <TBD>.
 
 Requirements:
-2 Linux servers
-ssh connection is open between the servers with the following configurations:
-- copy ~/.ssh/id_rsa.pub from Host A (Jenkins Master to be)
-- Paste in ~/.ssh/authorized_keys in Host B (Deployment)
+	- 2 Linux servers
+	- ssh connection is open between the servers with the following configurations:
+	    copy ~/.ssh/id_rsa.pub from Host A (Jenkins Master to be)
+	    Paste in ~/.ssh/authorized_keys in Host B (Deployment)
 
 How to run:
 
@@ -19,18 +20,33 @@ How to run:
 - ./jenkins-configuration.sh
 
 4. Jenkins master additional configurations: 
-- connect to jenkins ui (unlock first time)
+- login to jenkins UI (unlock first time)
 - configure extra permissions for running pipeline projects:
 	- Navigate to jenkins > Manage jenkins > In-process Script Approval --> Approve scripts
 
 5. Jenkins is ready to use, enjoy (:
 
-COMMENTS:
-1. The project in my server can be found under 
+
+
+ADDITIONAL NOTES:
+1. The project in my server (3.248.208.196) can be found under: 
 /home/ec2-user/jenkins-config 
 /home/ec2-user/docker-installation.sh
 
-2. In order to make '' project run i did the following changes:
-1.1 add docker label
-1.2 ansible inventory
+2. In order to make 'demo' project run I made the following adjustments:
+2.1 Jenkinsfile:
+	removed label 'docker' from agent docker
+	removed post stage for sending emails - SMTP error
+2.2 Ansible inventory:
+	edited file to contain - 
+	[web]
+	10.1.210.172
 
+	[web:vars]
+	ansible_user=ec2-user
+2.3 Ansible copy_image main.yml:
+	Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
+
+3. In 'Personetics-test' git repo I created release branch from master.
+
+4. In jenkins UI I built multibranch pipeline project named 'Personetics-test' --> there I configured the integration to GitHub
