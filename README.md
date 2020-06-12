@@ -1,5 +1,5 @@
 Personetics-Jenkins-Master
-This repository spins up Jenkins Master on a container with required plugins to deploy <TBD>.
+This repository spins up Jenkins Master on a container with the required plugins to deploy <TBD>.
 
 Requirements:
 2 Linux servers
@@ -9,7 +9,7 @@ ssh connection is open between the servers with the following configurations:
 
 How to run:
 
-1. git clone . 
+1. git clone https://github.com/Noamir/Personetics-Jenkins-Master.git
 
 2. Docker installation:
 - ./docker-installation.sh
@@ -20,8 +20,17 @@ How to run:
 
 4. Jenkins master additional configurations: 
 - connect to jenkins ui (unlock first time)
-** Jenkins is alreay up with plugins from plugins.txt file
 - configure extra permissions for running pipeline projects:
 	- Navigate to jenkins > Manage jenkins > In-process Script Approval --> Approve scripts
 
-5. Run Personetics-test pipeline (:    
+5. Jenkins is ready to use, enjoy (:
+
+COMMENTS:
+1. The project in my server can be found under 
+/home/ec2-user/jenkins-config 
+/home/ec2-user/docker-installation.sh
+
+2. In order to make '' project run i did the following changes:
+1.1 add docker label
+1.2 ansible inventory
+
