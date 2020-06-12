@@ -21,5 +21,4 @@ steps:
 - configure extra permissions for running pipeline projects:
 	- Navigate to jenkins > Manage jenkins > In-process Script Approval
 
-
-4. Run    
+4. Run Personetics-test pipeline (:    
