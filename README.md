@@ -33,15 +33,19 @@ ADDITIONAL NOTES:
 /home/ec2-user/docker-installation.sh
 
 2. In order to make 'demo' project run I made the following adjustments:
+
 2.1 Jenkinsfile:
 	removed label 'docker' from agent docker
 	removed post stage for sending emails - SMTP error
+	
 2.2 Ansible inventory:
+
 	edited file to contain - 
 	[web]
 	10.1.210.172
 	[web:vars]
 	ansible_user=ec2-user
+	
 2.3 Ansible copy_image main.yml:
 - Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
 - After 1st run, every deployment has to first delete the exsisting container, and then re-create it with the new release image.
