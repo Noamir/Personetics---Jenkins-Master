@@ -1,6 +1,6 @@
-Personetics-Jenkins-Master
+**Personetics-Jenkins-Master**
 
-This repository spins up Jenkins Master on a container with the required plugins to deploy <TBD>.
+This repository spins up Jenkins Master on a container with the required plugins to deploy a web app project from git, using Ansible.
 
 Requirements:
 	- 2 Linux servers
@@ -22,10 +22,9 @@ How to run:
 4. Jenkins master additional configurations: 
 - login to jenkins UI (unlock first time)
 - configure extra permissions for running pipeline projects:
-	- Navigate to jenkins > Manage jenkins > In-process Script Approval --> Approve scripts
+	- Navigate to jenkins > Manage jenkins > In-process Script Approval --> Approve running scripts
 
 5. Jenkins is ready to use, enjoy (:
-
 
 
 ADDITIONAL NOTES:
@@ -41,12 +40,12 @@ ADDITIONAL NOTES:
 	edited file to contain - 
 	[web]
 	10.1.210.172
-
 	[web:vars]
 	ansible_user=ec2-user
 2.3 Ansible copy_image main.yml:
-	Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
+- Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
+- After 1st run, every deployment has to first delete the exsisting container, and then re-create it with the new release image.
 
 3. In 'Personetics-test' git repo I created release branch from master.
 
-4. In jenkins UI I built multibranch pipeline project named 'Personetics-test' --> there I configured the integration to GitHub
+4. I built multibranch pipeline project named 'Personetics-test' & configured the integration to GitHub.
