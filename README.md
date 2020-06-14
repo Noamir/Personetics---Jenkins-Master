@@ -42,6 +42,7 @@ ADDITIONAL NOTES:
   
 	[web]
 	10.1.210.172
+	
 	[web:vars]
 	ansible_user=ec2-user
 	
@@ -49,6 +50,6 @@ ADDITIONAL NOTES:
 - Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
 - After 1st run, every deployment has to first delete the exsisting container, and then re-create it with the new release image.
 
-3. In 'Personetics-test' git repo I created release branch from master.
+3. Created release branch from master in 'Personetics-test' git repo.
 
-4. I built multibranch pipeline project named 'Personetics-test' & configured the integration to GitHub.
+4. Built multibranch pipeline project named 'Personetics-test' & configured the integration to GitHub.
