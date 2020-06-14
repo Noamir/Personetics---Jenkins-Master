@@ -37,6 +37,7 @@ ADDITIONAL NOTES:
 2. In order to make 'demo' project run I made the following adjustments:
 
 2.1 Jenkinsfile:
+
 	- removed label 'docker' from agent docker
 	- removed post stage for sending emails - SMTP error
 	
