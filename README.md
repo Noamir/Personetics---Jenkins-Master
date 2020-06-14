@@ -38,8 +38,8 @@ ADDITIONAL NOTES:
 
 2.1 Jenkinsfile:
 
-	- removed label 'docker' from agent docker
-	- removed post stage for sending emails - SMTP error
+- removed label 'docker' from agent docker
+- removed post stage for sending emails - SMTP error
 	
 2.2 Edited Ansible inventory file to contain:
   
