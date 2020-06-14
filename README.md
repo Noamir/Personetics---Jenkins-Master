@@ -5,8 +5,10 @@ This repository spins up Jenkins Master on a container with the required plugins
 Requirements:
 - 2 Linux servers
 - ssh connection is open between the servers with the following configurations:
-  *copy ~/.ssh/id_rsa.pub from Host A (Jenkins Master to be)
-  *Paste in ~/.ssh/authorized_keys in Host B (Deployment)
+  
+copy ~/.ssh/id_rsa.pub from Host A (Jenkins Master to be)
+
+Paste in ~/.ssh/authorized_keys in Host B (Deployment)
 
 How to run:
 
