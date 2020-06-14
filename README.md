@@ -50,8 +50,8 @@ ADDITIONAL NOTES:
 	ansible_user=ec2-user
 	
 2.3 Ansible copy_image main.yml:
-	- Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
-	- After 1st run, every deployment has to first delete the exsisting container, and then re-create it with the new release image.
+- Added 'Run docker image' step to playbook - to actually start the container on the deployment server.
+- After 1st run, every deployment has to first delete the exsisting container, and then re-create it with the new release image.
 
 3. Created release branch from master in 'Personetics-test' git repo.
 
