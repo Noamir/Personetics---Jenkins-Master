@@ -29,18 +29,17 @@ How to run:
 
 ADDITIONAL NOTES:
 1. The project in my server (3.248.208.196) can be found under: 
-/home/ec2-user/jenkins-config 
-/home/ec2-user/docker-installation.sh
+- /home/ec2-user/jenkins-config 
+- /home/ec2-user/docker-installation.sh
 
 2. In order to make 'demo' project run I made the following adjustments:
 
 2.1 Jenkinsfile:
-	removed label 'docker' from agent docker
-	removed post stage for sending emails - SMTP error
+- removed label 'docker' from agent docker
+- removed post stage for sending emails - SMTP error
 	
-2.2 Ansible inventory:
-
-	edited file to contain - 
+2.2 Edited Ansible inventory file to contain:
+  
 	[web]
 	10.1.210.172
 	[web:vars]
